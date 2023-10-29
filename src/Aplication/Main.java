@@ -31,43 +31,52 @@ public class Main {
 		 * System.out.println("Scanner e Arquivos fechados"); } }
 		 */
 
+		
+		
+		
+		
+		
 		// Segunda Solução:
-		FileReader file = null;
-		BufferedReader bf = null;
+		/*
+		 * FileReader file = null; BufferedReader bf = null;
+		 * 
+		 * try {
+		 * 
+		 * String path = "C:\\Users\\Casa\\Documents\\ws-java\\Secao17\\leitura.tt";
+		 * file = new FileReader(path); bf = new BufferedReader(file); String line =
+		 * bf.readLine();
+		 * 
+		 * while(line !=null) { System.out.println(line); line = bf.readLine(); }
+		 * 
+		 * 
+		 * 
+		 * } catch (IOException e) {
+		 * 
+		 * System.out.println("Erro1: "+ e.getMessage()); }finally {
+		 * 
+		 * try { if (bf != null) bf.close(); if (file != null) file.close();
+		 * 
+		 * }catch (IOException e) { System.out.println("Erro: "+ e.getMessage());
+		 * 
+		 * } }
+		 */
 
-		try {
-
-			String path = "C:\\Users\\Casa\\Documents\\ws-java\\Secao17\\leitura.tt";
-			file = new FileReader(path);
-			bf = new BufferedReader(file);
-			String line = bf.readLine();
-			
-			while(line !=null) {
-				System.out.println(line);
-				line = bf.readLine();
-			}
-			
-					
-
-		} catch (IOException e) {
-			
-			System.out.println("Erro1: "+ e.getMessage());
-		}finally {
-			
-			try {
-				if (bf != null)
-					bf.close();
-					if (file != null)
-					file.close();
-					
-			}catch (IOException e) {
-				System.out.println("Erro: "+ e.getMessage());
-				
-			}
-		}
-
+		//Terceira opção:
+		/*String path = "C:\\Users\\Casa\\Documents\\ws-java\\Secao17\\leitura.txt";
 		
-		
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			String line = br.readLine();
+			while (line != null) {
+			System.out.println(line);
+			line = br.readLine();
+			}
+			} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+			} */
+	
+	
+	
+	
 	}
 
 }
