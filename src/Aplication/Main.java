@@ -1,9 +1,11 @@
 package Aplication;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -75,7 +77,22 @@ public class Main {
 			} */
 	
 	
-	
+		
+	//Usando o FileWriter: para criar e escrever em arquivo:
+		
+		String path = "C:\\Users\\Casa\\Documents\\ws-java\\Secao17\\escrita.txt";
+		String[] dados= new String[] {"Aluno","Notas","Semestre"};
+		
+		try(BufferedWriter bw = new BufferedWriter( new FileWriter(path,true))){
+			for (String lines: dados) {
+				bw.write(lines);
+				bw.newLine();
+				
+			}
+			
+		}catch (IOException e) {
+			System.out.println("error: " + e.getMessage());
+		}
 	
 	}
 
