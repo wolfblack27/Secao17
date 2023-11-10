@@ -80,7 +80,7 @@ public class Main {
 		
 	//Usando o FileWriter: para criar e escrever em arquivo:
 		
-		String path = "C:\\Users\\Casa\\Documents\\ws-java\\Secao17\\escrita.txt";
+		/*String path = "C:\\Users\\Casa\\Documents\\ws-java\\Secao17\\escrita.txt";
 		String[] dados= new String[] {"Aluno","Notas","Semestre"};
 		
 		try(BufferedWriter bw = new BufferedWriter( new FileWriter(path,true))){
@@ -92,8 +92,39 @@ public class Main {
 			
 		}catch (IOException e) {
 			System.out.println("error: " + e.getMessage());
-		}
+		}*/
 	
+		
+		// Criando pasta a partir de um caminho - Pegando pastas e arquivos
+	/*	Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a folder path: ");
+		String strPath = sc.nextLine();
+		File path = new File(strPath);
+		File[] folders = path.listFiles(File::isDirectory);
+		System.out.println("FOLDERS:");
+		for (File folder : folders) {
+			System.out.println(folder);
+		}
+		File[] files = path.listFiles(File::isFile);
+		System.out.println("FILES:");
+		for (File file : files) {
+			System.out.println(file);
+		}
+		boolean success = new File(strPath + "\\subdir").mkdir();
+		System.out.println("Directory created successfully: " + success);
+		sc.close();*/
+		
+		
+		//Obtendo informações do arquivo
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a folder path: ");
+		String strPath = sc.nextLine();
+		File path = new File(strPath);
+		System.out.println("getPath: " + path.getPath());
+		System.out.println("getParent: " + path.getParent());
+		System.out.println("getName: " + path.getName());
+		sc.close();
+
 	}
 
 }
